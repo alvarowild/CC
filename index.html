@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement de livraison</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .card-input {
+            position: relative;
+        }
+        .card-input input {
+            width: 100%;
+            padding-right: 45px;
+        }
+        .card-logo {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px;
+        }
+        .half {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 12px;
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #008ecc;
+        }
+        .hidden {
+            display: none;
+        }
+        #confirmation-message {
+            margin-top: 20px;
+            font-size: 16px;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="payment-form" onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Nom sur la carte" required>
+            <input type="tel" placeholder="Numéro de téléphone" required>
+            <div class="card-input">
+                <input type="text" placeholder="N° de carte" required>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAZCAIAAADMuvsyAAAAPklEQVR4nGNkSDvDMBCAaUBsHbWYnoAFjf9/pjHtLGNMPwtnj7ygHrV41OJRi0ctHrV41GKcgHG0sTfsLQYAW5oFl4mjPCAAAAAASUVORK5CYII=" alt="Carte" class="card-logo">
+            </div>
+            <div class="half">
+                <input type="text" placeholder="MM/AA" required>
+                <input type="text" placeholder="CVV" required>
+            </div>
+            <button type="submit">Demander un remboursement</button>
+        </form>
+        <p id="confirmation-message" class="hidden">Merci, votre code de confirmation vous sera envoyé par SMS sous 24h.</p>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            document.getElementById('payment-form').style.display = 'none';
+            document.getElementById('confirmation-message').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
